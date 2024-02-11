@@ -1,4 +1,4 @@
-package org.example.rubybot143;
+package org.example.rubybot143.entity;
 
 
 import jakarta.persistence.*;

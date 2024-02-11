@@ -1,8 +1,9 @@
 package org.example.rubybot143;
 
+import org.example.rubybot143.entity.Users;
+import org.example.rubybot143.repository.UsersRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
 
