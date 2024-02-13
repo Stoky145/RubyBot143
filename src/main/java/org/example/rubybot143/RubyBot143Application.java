@@ -1,23 +1,21 @@
 package org.example.rubybot143;
 
-import org.example.rubybot143.entity.Users;
-import org.example.rubybot143.repository.UsersRepository;
+import org.example.rubybot143.entities.UsersEntity;
+import org.example.rubybot143.repositories.UsersRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.Lifecycle;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@EnableAutoConfiguration
+import java.util.List;
+
+@SpringBootApplication
 public class RubyBot143Application {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(RubyBot143Application.class);
-        UsersRepository repository = context.getBean(UsersRepository.class);
-
-        repository.save(new Users("Jeck", "Killed", "JeckKill@yandex.ru"));
-        repository.save(new Users("Bob", "Hegrod", "bob543@mail.ru"));
-        repository.save(new Users("Bill", "Novikov", "NovikBil@yandex.ru"));
+        SpringApplication.run(RubyBot143Application.class, args);
 
     }
 

@@ -1,13 +1,18 @@
-package org.example.rubybot143.entity;
+package org.example.rubybot143.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class UsersEntity {
     @Id
+    @GenericGenerator(name = "generator", strategy = "increment")
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
     @Column(name = "first_name")
     private String firstName;
@@ -16,28 +21,10 @@ public class Users {
     @Column(name = "email")
     private String email;
 
-    protected Users() {
-    }
-
-    public Users(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "users[id=%d, first_name=%s, last_name=%s, email=%s]",
-                id, firstName, lastName, email);
-    }
+    public UsersEntity(){}
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -62,5 +49,12 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "users[id=%d, first_name=%s, last_name=%s, email=%s]",
+                id, firstName, lastName, email);
     }
 }
